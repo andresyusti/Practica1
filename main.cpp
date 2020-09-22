@@ -90,6 +90,53 @@ int main()
             cout << copia << "!=" << A << endl;
         break;
 
+        case 9:
+            cout << "Ingresar el radio del criculo al que le desea calcular el area y el perimetro: ";
+            cin >> C;
+            cout << "Perimetro: " << 2*C*3.1416 << endl;
+            cout << "Area: " << C*C*3.1416 << endl;
+        break;
+
+        case 10:
+            cout << "Ingrese un numero: ";
+            cin >> A;
+            for(B=1;B<=100;B+=1){
+                if (B%A==0) cout << B << endl;
+            }
+        break;
+
+        case 11:
+            cout << "Ingrese un numero: ";
+            cin >> A;
+            for (B=1;B!=11;B+=1) cout << A*B << endl;
+        break;
+
+        case 12:
+            cout << "Ingrese un numero: ";
+            cin >> A;
+            copia=A;
+            for (B=1;B!=6;B+=1){
+                cout << A << endl;
+                A=A*copia;
+            }
+        break;
+
+        case 13:
+            cout << "Ingrese un numero: ";
+            cin >> A;
+            if (A<0) A=A*(-1);
+            else if (A==0) cout << "No se encontraron divisores" << endl;
+            for (B=1;B<=A;B+=1){
+                if (A%B==0) cout << B << endl;
+            }
+        break;
+
+        case 14:
+            for (A=1;A<=50;A+=1){
+                cout << A << "  " << 51-A << endl;
+            }
+        break;
+
         default:
             cout << "Ejercicio no definido" << endl;
         break;
