@@ -6,6 +6,7 @@ int main()
 {
     int ejercicio, A, B, copia;
     double C, D;
+    float E;
     while(true){
         cout << "Ingrese el numero del ejercicio: ";
         cin >> ejercicio;
@@ -134,6 +135,59 @@ int main()
         case 14:
             for (A=1;A<=50;A+=1){
                 cout << A << "  " << 51-A << endl;
+            }
+        break;
+
+        case 15:
+            B=0;
+            while(true){
+                cout << "Ingrese un numero: ";
+                cin >> A;
+                if (A==0) break;
+                B+=A;
+            }
+            cout << "La suma de los numeros ingresados es: " << B << endl;
+        break;
+
+        case 16:
+            copia=0;
+            D=0;
+            while(true){
+                    cout << "Ingrese un numero: ";
+                    cin >> C;
+                    D=D+C;
+                    if (C==0) break;
+                    B+=1;
+        }
+        E=D/B;
+        cout << E << endl;
+        break;
+
+        case 17:
+            B=0;
+            while(true){
+                cout << "Ingrese un numero: ";
+                cin >> A;
+                if (B<A) B=A;
+                else if (A==0) break;
+            }
+            cout << "El numero mayor fue: " << B << endl;
+        break;
+
+        case 18:
+            cout << "Ingrese un numero: ";
+            cin >> A;
+            copia=0;
+            if (A==0) cout << "No es un cuadrado perfecto" << endl;
+            else{
+                for (B=0;B<=A/2;B+=1){
+                    if (B*B==A) {
+                       copia=1;
+                       break;
+                    }
+                }
+                if (copia==1) cout << "Si es un cuadrado perfecto" << endl;
+                else if (copia==0) cout << "No es un cuadrado perfecto" << endl;
             }
         break;
 
