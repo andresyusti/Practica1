@@ -192,7 +192,7 @@ int main()
         break;
 
         default:
-            cout << "Ejercicio no definido" << endl;
+            cout << "Ejercicio no definido." << endl;
         break;
         }
     }
