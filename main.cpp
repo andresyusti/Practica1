@@ -191,6 +191,48 @@ int main()
             }
         break;
 
+        case 19:
+            cout << "Ingrese un numero: ";
+            cin >> A;
+            C=0;
+            B=2;
+            if (A==2);
+            else if (A%B==0){
+                cout << A << " No es un numero primo." << endl;
+                C=1;
+            }
+            else{
+                B+=1;
+                for (;B<A;B+=2){
+                    if (A%B==0){
+                        cout << A << " No es un numero primo" << endl;
+                        C=1;
+                        break;
+                    }
+                }
+            }
+            if (C==0) cout << A << " Es un numero primo." << endl;
+        break;
+
+        case 20:
+            cout << "Ingresar un numero: ";
+            cin >> A;
+            B=0;
+            copia=A;
+            while(A!=0){
+                B*=10;
+                B=B+(A%10);
+                A=A/10;
+            }
+            if (copia==B) cout << copia << " Si es un palindromo" << endl;
+            else cout << copia << " No es un palindromo" << endl;
+
+        break;
+
+        case 21:
+
+        break;
+
         default:
             cout << "Ejercicio no definido." << endl;
         break;
