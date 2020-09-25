@@ -7,6 +7,7 @@ int main()
     int ejercicio, A, B, copia;
     double C, D;
     float E;
+    char P;
     while(true){
         cout << "Ingrese el numero del ejercicio: ";
         cin >> ejercicio;
@@ -230,7 +231,85 @@ int main()
         break;
 
         case 21:
+            cout << "Ingresar solo un caracter: ";
+            cin >> P;
+            A=P;
+            if (A>64 && A<91){
+                P=A+32;
+                cout << "Su caracter en minuscula: " << P << endl;
+            }
+            else if (A>96 && A<123){
+                P=A-32;
+                cout << "Su caracter en mayuscula: " << P << endl;
+            }
+            else cout << "Su caracter: " << P << endl;
+        break;
 
+        case 23:
+            cout << "Escribir el primer numero: ";
+            cin >> A;
+            cout << "Escribir el segundo numero: ";
+            cin >>B;
+            if (A>B){
+                C=A;
+                D=B;
+            }
+            else {
+                C=B;
+                D=A;
+            }
+            ejercicio=C;
+            while(true){
+                if (ejercicio%A==0){
+                    if (ejercicio%B==0){
+                        cout << "El MCM entre " << A << " y " << B <<" es: " << ejercicio << endl;
+                        break;
+                    }
+                }
+                ejercicio+=1;
+            }
+        break;
+
+        case 25:
+            cout << "Ingrese un numero: ";
+            cin >> A;
+            for(B=0;A!=0;A=A/10) B+=1;
+            cout << "El numero de digitos es: " << B << endl;
+        break;
+
+        case 27:
+            cout << "Ingresar primer numero: ";
+            cin >> A;
+            cout << "Ingresar operador: ";
+            cin >> P;
+            cout << "Ingresar Segundo numero: ";
+            cin >> B;
+            if (P==42) cout << "Resultado: " << A*B << endl;
+            else if (P==43) cout << "Resultado: " << A+B << endl;
+            else if (P==45) cout << "Resultado: " << A-B << endl;
+            else if (P==47) cout << "Resultado: " << A/B << endl;
+            else cout << "Debe de poner alguno de estos operadores (* , / , + , -): " << endl;
+        break;
+
+        case 29:
+            P=1;
+            A=0;
+            B=100;
+            copia=(B/2)+A;
+            while(P!=61){
+                    cout << copia << " Este es el numero que esta pensando, Ponga (<) si es menor, (>) si es mayor y (=) si es el numero que penso: ";
+                    cin >> P;
+                    if (P==60){
+                        B=copia;
+                        copia=copia-((B-A)/2);
+                    }
+                    else if (P==62){
+                        A=copia;
+                        copia=((B-A)/2)+copia;
+                    }
+                    else if (P==61) cout << "Gracias por jugar" << endl;
+                    else cout << "Debe de colocar ( < , > , = )" << endl;
+        }
         break;
 
         default:
