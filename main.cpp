@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    int ejercicio, A, B, copia;
+    int ejercicio, A, B, copia, F;
     double C, D;
     float E;
     char P;
@@ -312,10 +312,204 @@ int main()
         }
         break;
 
+        case 31:
+            cout << "Ingrese una letra: ";
+            cin >> P;
+            if ((P>64 && P<91 )|| (P>96 && P<123)){
+                if (P==65 || P==69 || P==73 || P==79 || P==85 || P==97 || P==101 || P==105 || P==111 || P==117){
+                    cout << P << " es una vocal." << endl;
+                }
+                else cout << P << " es una consonante" << endl;
+            }
+            else if (P==-91 || P==-92) cout << P << " es una consonante" << endl;
+            else cout << "No es una letra" << endl;
+        break;
+
+        case 33:
+            cout << "Ingresar el dia: ";
+            cin >> A;
+            cout << "Ingresa el mes: ";
+            cin >> B;
+            if (B<0) cout << B << " Es un mes invalido" << endl;
+
+            else if (A<0) cout << "Es una dia invalido" << endl;
+
+            else if (B<8){
+                if (B%2==0){
+
+                    if (B==2){
+                      if (A==29) cout << A << "/" << B << " Es valida en años bisiestos" << endl;
+                      else if (A<29) cout << A << "/" << B << " es una fecha valida" << endl;
+                      else cout << A << "/" << B << " es una fecha invalida" << endl;
+                    }
+
+                    else if (A<31) cout << A << "/" << B << " es una fecha valida" << endl;
+                    else cout << A << "/" << B << " es una fecha invalida" << endl;
+                }
+                else{
+
+                    if (A<32) cout << A << "/" << B << " es una fecha valida" << endl;
+                    else cout << A << "/" << B << " es una fecha invalida" << endl;
+                }
+            }
+
+            else if (B<13){
+
+                if (B%2==0){
+
+                    if (A<32) cout << A << "/" << B << " es una fecha valida" << endl;
+                    else cout << A << "/" << B << " es una fecha invalida" << endl;
+                }
+
+                else {
+
+                    if (A<31) cout << A << "/" << B << " es una fecha valida" << endl;
+                    else cout << A << "/" << B << " es una fecha invalida" << endl;
+                }
+            }
+
+            else cout << B << " Es un mes invalido" << endl;
+
+        break;
+
+        case 35:
+            cout << "Ingresar un numero impar: ";
+            cin >> ejercicio;
+            B=1;
+            if (ejercicio%2==0) cout << "Debe de ingresar un numero impar" << endl;
+            else{
+                ejercicio=(ejercicio/2)+1;
+                for(A=1;ejercicio>=A;A++){
+                    for(copia=ejercicio-1;copia>=A;copia--) cout << " ";
+
+                    for(B=1;2*A-1>=B;B++) cout << "*";
+
+                    cout << endl;
+                }
+
+                for(A=1;ejercicio-1>=A;A++){
+                    for(copia=1;copia<=A;copia++) cout << " ";
+
+                    for(B=(ejercicio*2)-3;A*2-1<=B;B--) cout << "*";
+
+                    cout << endl;
+                }
+             //cout << "Terminado";
+            }
+        break;
+
+        case 37:
+            cout << "Ingrese un numero: ";
+            cin >> ejercicio;
+            A=0;
+            B=1;
+            C=0;
+            while (B<=ejercicio){
+                copia=A+B;
+                if (B%2==0) C+=B;
+                cout << B << endl;
+                A=B;
+                B=copia;
+            }
+            cout << "La suma de los numeros pares de la serie de fubonacci menores a " << ejercicio << " Es: " << C << endl;
+        break;
+
+        case 39:
+            cout << "Ingrese un numero: ";
+            cin >> A;
+            D=0;
+            for(;A!=0;A/=10){
+                B=A%10;
+                copia=B;
+                C=1;
+                for (;copia!=0;copia-=1){
+                    C*=B;
+                }
+                D+=C;
+            }
+            cout << "Resultado: " << D << endl;
+        break;
+
+        case 41:
+            cout << "Ingrese un numero: ";
+            cin >> ejercicio;
+            C=0;
+            A=ejercicio;
+            while(C==0){
+                A+=1;
+                B=1;
+                for (;B<=ejercicio;B++){
+                    if (A%B!=0) break;
+                    else if (B==ejercicio) C=1;
+                }
+            }
+            cout << "El MCM es: " << A << endl;
+        break;
+
+        case 43:
+            cout << "Ingrese un numero: ";
+            cin >> ejercicio;
+            A=2;
+            C=0;
+            if (ejercicio<=1) cout << "Poner un numero mayor a 1" << endl;
+            else{
+                for(;A<=ejercicio;A++){
+                    for (B=2;B<=A;B++){
+                        if (A==B){
+                            C+=B;
+                        }
+                        else if (A%B==0) break;
+
+                    }
+                }
+            }
+            cout << "La suma de los numeros primos menores a " << ejercicio << " es: " << C << endl;
+        break;
+
+        case 45:
+            cout << "Ingresar el tamaño de la espiral (Solo numeros impares): ";
+            cin >> ejercicio;
+            B=0;
+            if (ejercicio%2==0) cout << "Solo debe de ingresar numero impares" << endl;
+            else{
+                for (;ejercicio>=0;ejercicio-=2){
+                    if (ejercicio==1) B+=ejercicio;
+                    else{
+                        for (A=ejercicio*ejercicio;A>=((ejercicio*ejercicio)-(ejercicio-1)*3);A=A-(ejercicio-1)){
+                            B=B+A;
+                            //cout << B << endl;
+                        }
+                    }
+                }
+            }
+            cout << "resultado: " << B << endl;
+        break;
+
+        case 47:
+            cout << "Ingrese el numero de divisores: ";
+            cin >> A;
+            copia=1;
+            B=0;
+            for(B=0;A>=B;){
+                B=0;
+                ejercicio=(copia*(copia+1))/2;
+                for(F=1;F<=ejercicio;F++){
+                    if (ejercicio%F==0) B+=1;
+
+                }
+                copia+=1;
+            }
+            cout << "El numero es: " << ejercicio << " que tiene " << B << " divisores" << endl;
+        break;
+
         default:
             cout << "Ejercicio no definido." << endl;
         break;
+
         }
+
+
+
     }
 
     return 0;
